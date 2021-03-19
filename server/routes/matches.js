@@ -5,6 +5,6 @@ const router = express.Router();
 
 router
 	.get('/', matchesController.getMatches)
-	.get('/details', matchesController.getDetails);
+	.get('/details/:id', matchesController.getDetails)
 
 module.exports = router;

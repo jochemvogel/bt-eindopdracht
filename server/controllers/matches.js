@@ -1,4 +1,5 @@
 const fs = require('fs');
+const Match = require('../models/match');
 
 function getMatches(req, res) {
 	const dataFilePath = './data/data.json';
@@ -15,7 +16,7 @@ function getMatches(req, res) {
 
 	const matches = JSON.parse(rawData);
 
-	const matchesObjIsEmpty = Object.keys(matches).length === 0
+	const matchesObjIsEmpty = Object.keys(matches).length === 0;
 
 	if (matchesObjIsEmpty) {
 		const matches = 'No matches';
@@ -32,7 +33,14 @@ function getMatches(req, res) {
 }
 
 function getDetails(req, res) {
-	res.render('matches/details');
+	const matchId = req.params.id;
+	Match.findById(matchId, (match) => {
+		res.render('matches/details', {
+			match,
+		});
+	});
+
+	// res.render('matches/details');
 }
 
 module.exports = { getMatches, getDetails };

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { v4: uuidv4 } = require('uuid');
 
 function getAdmin(req, res) {
 	const dataFilePath = './data/data.json';
@@ -21,7 +22,9 @@ function getAdmin(req, res) {
 }
 
 function getAddMatch(req, res) {
-	res.render('admin/add-match');
+	res.render('admin/add-match', {
+		id: uuidv4()
+	});
 }
 
 function postAddMatch(req, res) {
@@ -54,4 +57,8 @@ function postAddMatch(req, res) {
 	}, 10);
 }
 
-module.exports = { getAdmin, postAddMatch, getAddMatch };
+function getEditMatch(req, res) {
+	res.render('admin/edit-match');
+}
+
+module.exports = { getAdmin, postAddMatch, getAddMatch, getEditMatch };

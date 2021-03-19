@@ -9,6 +9,9 @@
 <main>
 	<form action="/admin/add-match" method="POST">
 		<div>
+			<input type="hidden" name="id" value=<%= id %>" />
+		</div>
+		<div>
 			<label for="team1">Team 1*</label>
 			<input type="text" name="team1" required />
 		</div>
