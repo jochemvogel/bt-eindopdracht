@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 function getAdmin(req, res) {
 	res.render('admin/index');
 }
@@ -7,15 +9,33 @@ function getEditMatch(req, res) {
 }
 
 function postEditMatch(req, res) {
-	const team1 = req.body.team1;
-	const team2 = req.body.team2;
-	const time = req.body.time;
-	const scoreTeam1 = req.body.score1;
-	const scoreTeam2 = req.body.score2;
+	const dataFilePath = './data/data.json';
 
-	console.log(req.body);
+	/* Check if file does not exists, yet */
+	if (!fs.existsSync(dataFilePath)) {
+		fs.appendFile(dataFilePath, '{}', () => {
+			console.log('Created new file');
+		});
+	}
 
-	res.render('admin/index');
+	/* Execute it after the file is created (process.nextTick & setImmediate don't do the trick) */
+	setTimeout(() => {
+		const dataFile = fs.readFileSync(dataFilePath);
+
+		const data = Array.from(JSON.parse(dataFile));
+
+		data.push(req.body);
+
+		const whatToWrite = JSON.stringify(data, null, 2);
+		fs.writeFile('./data/data.json', whatToWrite, (err) => {
+			if (err) {
+				throw err;
+			}
+			console.log('Succesfully update data.json');
+		});
+
+		res.render('admin/index');
+	}, 0);
 }
 
 module.exports = { getAdmin, postEditMatch, getEditMatch };
