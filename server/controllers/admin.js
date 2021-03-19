@@ -1,7 +1,23 @@
 const fs = require('fs');
 
 function getAdmin(req, res) {
-	res.render('admin/index');
+	const dataFilePath = './data/data.json';
+
+	if (!fs.existsSync(dataFilePath)) {
+		const data = '';
+		res.render('admin/index', {
+			data,
+		});
+		return;
+	}
+
+	let rawData = fs.readFileSync(dataFilePath);
+
+	let matches = JSON.parse(rawData);
+
+	res.render('admin/index', {
+		matches,
+	});
 }
 
 function getEditMatch(req, res) {
@@ -34,8 +50,8 @@ function postEditMatch(req, res) {
 			console.log('Succesfully update data.json');
 		});
 
-		res.render('admin/index');
-	}, 0);
+		res.redirect('/');
+	}, 10);
 }
 
 module.exports = { getAdmin, postEditMatch, getEditMatch };
