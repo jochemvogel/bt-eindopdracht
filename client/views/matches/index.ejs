@@ -4,28 +4,21 @@
 
 <a href="/admin">Go to admin</a>
 
+
 <section>
-	<article>
-		<h2>Team A - Team B</h2>
-		<p>3-0</p>
-		<button>
-			<a href="/details">&rarr;</a>
-		</button>
-	</article>
-	<article>
-		<h2>Team C - Team D</h2>
-		<p>In progress..</p>
-		<button>
-			<a href="/details">&rarr;</a>
-		</button>
-	</article>
-	<article>
-		<h2>Team E - Team F</h2>
-		<p>Starts 15:00</p>
-		<button>
-			<a href="/details">&rarr;</a>
-		</button>
-	</article>
+<% if (matches !== undefined & matches !== 'No matches') { %>
+	<% for(var i = 0; i < matches.length; i++) { %>
+		<article>
+			<h2><%= matches[i].team1 %> - <%= matches[i].team2 %></h2>
+			<p><%= matches[i].score1 %> - <%= matches[i].score2 %></p>
+			<button>
+				<a href="/details">&rarr;</a>
+			</button>
+		</article>	
+	<% } %>
+<% } else{ %>
+	<p>There are no matches</p>
+<% } %>
 </section>
 
 <%- include('../includes/end') %>

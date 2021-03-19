@@ -20,11 +20,11 @@ function getAdmin(req, res) {
 	});
 }
 
-function getEditMatch(req, res) {
-	res.render('admin/edit-match');
+function getAddMatch(req, res) {
+	res.render('admin/add-match');
 }
 
-function postEditMatch(req, res) {
+function postAddMatch(req, res) {
 	const dataFilePath = './data/data.json';
 
 	/* Check if file does not exists, yet */
@@ -50,8 +50,8 @@ function postEditMatch(req, res) {
 			console.log('Succesfully update data.json');
 		});
 
-		res.redirect('/');
+		res.redirect('/admin');
 	}, 10);
 }
 
-module.exports = { getAdmin, postEditMatch, getEditMatch };
+module.exports = { getAdmin, postAddMatch, getAddMatch };
