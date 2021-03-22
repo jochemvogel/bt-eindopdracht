@@ -6,9 +6,9 @@ function getAdmin(req, res) {
 	const dataFilePath = './data/data.json';
 
 	if (!fs.existsSync(dataFilePath)) {
-		const data = '';
+		const matches = '';
 		res.render('admin/index', {
-			data,
+			matches,
 		});
 		return;
 	}
