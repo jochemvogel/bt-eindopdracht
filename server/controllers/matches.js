@@ -39,8 +39,6 @@ function getDetails(req, res) {
 			match,
 		});
 	});
-
-	// res.render('matches/details');
 }
 
 module.exports = { getMatches, getDetails };

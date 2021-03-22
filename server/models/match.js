@@ -27,6 +27,10 @@ module.exports = class Product {
 		this.userId = userId;
 	}
 
+    static getMatchesFromFile (cb) {
+        getMatchesFromFile(cb)
+    }
+
 	static fetchAll(cb) {
 		getMatchesFromFile(cb);
 	}

@@ -4,7 +4,8 @@
 	"description": "server for browser technologies",
 	"main": "app.js",
 	"scripts": {
-		"dev": "nodemon"
+		"dev": "nodemon",
+        "build": "node"
 	},
 	"author": "Jochem Vogel",
 	"license": "ISC",

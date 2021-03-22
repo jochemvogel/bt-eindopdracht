@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
+const Match = require('../models/match')
 
 function getAdmin(req, res) {
 	const dataFilePath = './data/data.json';
@@ -58,7 +59,40 @@ function postAddMatch(req, res) {
 }
 
 function getEditMatch(req, res) {
-	res.render('admin/edit-match');
+    const matchId = req.params.id;
+	Match.findById(matchId, (match) => {
+		res.render('admin/edit-match', {
+			match,
+		});
+	});
 }
 
-module.exports = { getAdmin, postAddMatch, getAddMatch, getEditMatch };
+function postEditMatch(req, res) {
+    const updatedMatch = req.body;
+    let oldMatch = '';
+    const matchId = req.params.id;
+	// Match.findById(matchId, (match) => {
+    //     oldMatch = match
+
+    //     /*
+
+    //     ==> rewrite oldMatch to updatedMatch <==
+
+    //     */
+
+    //     console.log(oldMatch);
+    //     console.log(updatedMatch);
+    //     res.redirect('/admin')
+	// }
+    // );
+
+    // const allMatches = Match.getMatchesFromFilee((matches) => {
+    //     return matches;
+    // });
+
+    // setTimeout(() => {
+    //     console.log(allMatches);
+    // }, 1000);
+}
+
+module.exports = { getAdmin, postAddMatch, getAddMatch, getEditMatch, postEditMatch };

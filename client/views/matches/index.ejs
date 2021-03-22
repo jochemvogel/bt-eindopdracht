@@ -12,9 +12,9 @@
 			<h2><%= matches[i].team1 %> - <%= matches[i].team2 %></h2>
 			<p><%= matches[i].score1 %> - <%= matches[i].score2 %></p>
 			<button>
-				<a href="/details/<%= matches[i].id %>">Details</a>
+				<a href="/details/<%= matches[i].id %>">Details &rarr;</a>
 			</button>
-		</article>	
+		</article>
 	<% } %>
 <% } else{ %>
 	<p>There are no matches</p>

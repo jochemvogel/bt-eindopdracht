@@ -6,7 +6,8 @@ const router = express.Router();
 router
 	.get('/', adminController.getAdmin)
 	.get('/add-match', adminController.getAddMatch)
-	.get('/edit-match', adminController.getEditMatch)
-	.post('/add-match', adminController.postAddMatch);
+	.post('/add-match', adminController.postAddMatch)
+	.get('/edit-match/:id', adminController.getEditMatch)
+	.post('/edit-match/:id', adminController.postEditMatch);
 
 module.exports = router;
