@@ -77,10 +77,6 @@ This app is made with vanilla JS (frontend) and NodeJS (backend).
 
 To be continued
 
-### Everything excepts `/docs` & `/client`
-
-The server side part of the application. Not applicable for this course. You need to run the server if you want to have the application locally. Wanted to seperate this files in another folder, but couldn't make heroku work when I did that.
-
 ### `/docs`
 
 All the documents are located here. They're also mentioned in the README, so you don't have to look their either.
@@ -96,6 +92,10 @@ You can find al the public resources here. In this project are no building scrip
 #### `/client/views`
 
 Here you can find all the views of the application. It's build with EJS for dynamic purposes, but it's basically HTML with some variables.
+
+### The rest
+
+The server side part of the application. Not applicable for this course. You need to run the server if you want to have the application locally. Wanted to seperate this files in another folder, but couldn't make heroku work when I did that.
 
 ## :memo: Todo list
 
