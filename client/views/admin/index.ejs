@@ -1,0 +1,27 @@
+<%- include('../includes/head') %>
+
+<h1>Admin</h1>
+<h2>Matches</h2>
+
+<a href="/">Overview Matches</a>
+<br />
+<a href="/admin/add-match">Add Match</a>
+
+
+<section>
+<% if (matches !== undefined & matches !== 'No matches') { %>
+	<% for(var i = 0; i < matches.length; i++) { %>
+		<article>
+			<h2><%= matches[i].team1 %> - <%= matches[i].team2 %></h2>
+			<p><%= matches[i].score1 %> - <%= matches[i].score2 %></p>
+			<button>
+				<a href="/admin/edit-match/<%= matches[i].id %>">Edit &rarr;</a>
+			</button>
+		</article>
+	<% } %>
+<% } else{ %>
+	<p>There are no matches</p>
+<% } %>
+</section>
+
+<%- include('../includes/end') %>

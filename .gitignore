@@ -11,6 +11,9 @@ node_modules
 .AppleDouble
 .LSOverride
 
+# Dotenv file
+.env
+
 # Visual Studio Code
 .settings/
 .vscode/
