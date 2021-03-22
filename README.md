@@ -1,6 +1,6 @@
 # GameChanger - Change game data
 
-~~**[Live link]()**~~
+**[Live link](https://bt-eindopdracht.herokuapp.com/)**
 
 In GameChanger you can get an overview of different sport games (_expand description_)
 
@@ -65,9 +65,9 @@ This app is made with vanilla JS (frontend) and NodeJS (backend).
 
 `git clone https://github.com/jochemvogel/progressive-web-apps-2021.git `
 
-#### 2). Navigate to `/server` and install dependencies
+#### 2). Install dependencies
 
-`cd server && npm install`
+`npm install`
 
 #### 3). Start server
 
@@ -77,9 +77,9 @@ This app is made with vanilla JS (frontend) and NodeJS (backend).
 
 To be continued
 
-### `/server`
+### Everything excepts `/docs` & `/client`
 
-The server side part of the application. Not applicable for this course. You need to run the server if you want to have the application locally. Besides that, you do not have to look at the `/server` folder
+The server side part of the application. Not applicable for this course. You need to run the server if you want to have the application locally. Wanted to seperate this files in another folder, but couldn't make heroku work when I did that.
 
 ### `/docs`
 
