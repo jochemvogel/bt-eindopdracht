@@ -63,7 +63,7 @@ This app is made with vanilla JS (frontend) and NodeJS (backend).
 
 #### 1). Clone the repository
 
-`git clone https://github.com/jochemvogel/progressive-web-apps-2021.git `
+`git clone https://github.com/jochemvogel/bt-eindopdracht.git`
 
 #### 2). Install dependencies
 
