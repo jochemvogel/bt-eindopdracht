@@ -2,18 +2,26 @@
 
 **[Live link](https://bt-eindopdracht.herokuapp.com/)**
 
-In GameChanger you can get an overview of different sport games (_expand description_)
+In GameChanger you can get an overview of different sport games. Besides that you can also enable alerts, so you won't miss anything from your favorite sport team(s).
 
 ## Table of Contents
 
 <table>
-    <tr>
-        <td align="center"><a href="#nerd_face-usage">🤓 Course <a></td>
-         <td align="center"><a href="#eyeglasses-overview"> 👓 Overview <a></td>
-        <td align="center"><a href="#gear-installation">⚙️ Installation<a></td>
-        <td align="center"><a href="#open_file_folder-folder-structure">🗂 Folder Structure<a></td>
-        <td align="center"><a href="#memo-todo-list">📝 Todo list<a></td>
-    </tr>
+
+<tr>
+
+<td align="center"><a href="#nerd_face-usage">🤓 Course <a></td>
+
+<td align="center"><a href="#eyeglasses-overview"> 👓 Overview <a></td>
+
+<td align="center"><a href="#gear-installation">⚙️ Installation<a></td>
+
+<td align="center"><a href="#open_file_folder-folder-structure">🗂 Folder Structure<a></td>
+
+<td align="center"><a href="#memo-todo-list">📝 Todo list<a></td>
+
+</tr>
+
 </table>
 
 ## Course
@@ -23,15 +31,39 @@ _The course **Browser Technologies** is about learning to build robust and acces
 ### Usecase
 
 **Sports match score website**
+
 I want to pass on the scores or times of a sports match to interested parties, who can then respond.
 
 **Requirements**
 
-- Admin interface where you can create a competition
-- The admin must be able to enter scores or times for each match
-- Users must be able to register for certain competitions (overview screen)
-- Users who follow a match will be notified when new information arrives. (How do you do this if the user is following multiple matches?)
-- Users can give a response to this, which can be read by other users (and the admin). The admin must be able to remove comments.
+-   Admin interface where you can create a competition
+
+-   The admin must be able to enter scores or times for each match
+
+-   Users must be able to register for certain competitions (overview screen)
+
+-   Users who follow a match will be notified when new information arrives. (How do you do this if the user is following multiple matches?)
+
+-   Users can give a response to this, which can be read by other users (and the admin). The admin must be able to remove comments.
+
+### Browser testing
+
+I'm going to test in the following browsers:
+
+1.  **Chromium:** Chrome 88 (on Windows) _=> based on [statcounter](https://gs.statcounter.com/browser-version-market-share/all/netherlands) this is the most used browser in the Netherlands atm._
+2.  **Non-Chromium:** Firefox 51 (on Mac) _=> doesn't support css grid_
+3.  **Samsung/Android:** Samsung Internet (on Samsung Galaxy A51) _=> Best sold Samsung phone 2020_
+4.  **Non-Samsung/Android):** UC Browser (on Moto G7 Play)
+5.  **iOS:** Safari iPhone (on iPhone 12 mini)
+
+### Enhancements
+
+1.  **Fancy Menu**
+    a. The menu will go to the bottom of the page (with ID) if JS is not supported. If it is, create some nice animation that will improve the UX.
+2.  **CSS grid**
+    a. On mobile the cards aren't that big, but on desktop they will. Because of that I want to use CSS grid to make them responsive. Three next to each other could be better on desktop. What can you do if grid is not supported? I want to find a solution for that (because they somehow were able to do that in the past)
+3.  **Notification API**
+    a. When a match got updated I want to give the users (that enabled notifications for that match) to get a notification (with the Notification API). However, this is not supported in Safari on iOS. There has to be a way to give a notification. Maybe with a popup? Notification animation in the top? What if JS is disabled? Figure that out.
 
 ## :eyeglasses: Overview
 
@@ -39,9 +71,18 @@ I want to pass on the scores or times of a sports match to interested parties, w
 
 ...
 
-### Wireflow
+### Design
 
 <details>
+
+<summary>First sketch design</summary>
+
+![First sketch design](https://i.ibb.co/LpLfNCF/Screenshot-2021-03-23-at-20-24-01.png)
+
+</details>
+
+<details>
+
 <summary>Wireflow non-admin</summary>
 
 ![Wireflow non-admin](https://github.com/jochemvogel/bt-eindopdracht/blob/master/docs/wireflow-overview.jpg)
@@ -49,6 +90,7 @@ I want to pass on the scores or times of a sports match to interested parties, w
 </details>
 
 <details>
+
 <summary>Wireflow admin</summary>
 
 ![Wireflow admin](https://github.com/jochemvogel/bt-eindopdracht/blob/master/docs/wireflow-admin.jpg)
@@ -99,8 +141,9 @@ The server side part of the application. Not applicable for this course. You nee
 
 ## :memo: Todo list
 
-- [ ] **Create design**. Because of that you know want you want to build and add them to the todo list or backlog
-- [ ] **Come up with new ideas and add those in the backlog**. Ongoing 🙃
+-   [ ] **Create design**. Because of that you know want you want to build and add them to the todo list or backlog
+
+-   [ ] **Come up with new ideas and add those in the backlog**. Ongoing 🙃
 
 ### Backlog
 
