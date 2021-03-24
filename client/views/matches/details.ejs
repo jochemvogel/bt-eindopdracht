@@ -5,14 +5,35 @@
 <a href="/">&larr; Go back</a>
 
 <% if (match) { %>
-
     <h2><%= match.team1 %> - <%= match.team2 %></h2>
-    <p><%= match.score1 %> - <%= match.score2 %></p>
+
+    <% if (match.score1 !== "") { %>
+    <div class="score-container">
+        <div>
+            <p><%= match.score1 %></p>
+        </div>
+
+        <div>
+            <p><%= match.score2 %></p>
+        </div>
+    </div>
+
+    <p><%= new Date(match.time) %></p>
+
+    <% } else { %>
+        <p>No score available</p>
+    <% } %>
+
+
 
 <% } %>
 
 <% if (!match) { %>
     <h2>This is not a valid match. Please go back and select a valid one</h2>
 <% } %>
+
+<hr />
+
+<h2>Comments</h2>
 
 <%- include('../includes/end') %>

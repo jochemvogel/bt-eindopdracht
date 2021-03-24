@@ -13,11 +13,11 @@
 		</div>
 		<div>
 			<label for="team1">Team 1*</label>
-			<input type="text" name="team1" value="<%= match.team1 %>" required />
+			<input type="text" name="team1" value="<%= match.team1 %>" maxlength="8" required />
 		</div>
 		<div>
 			<label for="team2">Team 2*</label>
-			<input type="text" name="team2" value="<%= match.team2 %>" required />
+			<input type="text" name="team2" value="<%= match.team2 %>" maxlength="8" required />
 		</div>
 		<div>
 			<label for="time">Time*</label>
@@ -31,9 +31,21 @@
 			<label for="score2">Score team 2</label>
 			<input type="number" name="score2" id="" />
 		</div>
+        <div>
+            <label for="finished">Game Finished?</label>
+            <% if (match.finished) { %>
+                <input type="checkbox" name="finished" id="" checked>
+            <% } else { %>
+                <input type="checkbox" name="finished" id="">
+            <% } %>
+        </div>
 		<button><a href="/">View</a></button>
 		<button type="submit">Save</button>
 	</form>
+
+    <form action="/admin/remove-match/<%= match.id %>" method="POST">
+        <button type="submit">Remove X</button>
+    </form>
 </main>
 
 <%- include('../includes/end') %>

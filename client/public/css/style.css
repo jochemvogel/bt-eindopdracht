@@ -1,5 +1,13 @@
 body {
 	text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f3f3f3;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section {
@@ -7,12 +15,101 @@ section {
 }
 
 article {
-	padding: 1em 0;
+	padding: 1em;
 	box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
 	margin: 1em;
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 0.5em;
+    height: 3em;
 }
 
-button {
-	font-size: 1.25em;
-    margin: 0.5em;
+article h3 {
+    font-size: 1.25em;
+    margin: 0;
+    color: #1d1d1d;
+}
+
+article p {
+    margin: 0.5em 0;
+    justify-self: flex-end;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+article img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2%;
+    height: 1.75em;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 0.5em;
+}
+
+header {
+    height: 6em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+header > h1 {
+    text-transform: uppercase;
+    margin: 0;
+}
+
+main {
+  background-color: #fafafa;
+  width: 95%;
+  height: 100%;
+  margin-top: 1em;
+  border-radius: 2em;
+}
+
+/* === CLASSES === */
+
+.clickable-card {
+    text-decoration: none;
+}
+
+/* === Details page === */
+
+hr {
+    width: 60%;
+    margin-top: 2em;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-size: 4em;
+    margin: 0 0.4em;
+    height: 1.5em;
+    width: 1.25em;
+    border: 2px solid #000;
+}
+
+.score-container > div > p {
+    margin: 0;
 }

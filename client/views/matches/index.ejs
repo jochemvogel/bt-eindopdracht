@@ -1,24 +1,35 @@
 <%- include('../includes/head') %>
 
-<h1>Matches</h1>
+<h2>Matches</h2>
 
 <a href="/admin">Go to admin</a>
 
 
 <section>
 <% if (matches !== undefined & matches !== 'No matches') { %>
+
 	<% for(var i = 0; i < matches.length; i++) { %>
-		<article>
-			<h2><%= matches[i].team1 %> - <%= matches[i].team2 %></h2>
-			<p><%= matches[i].score1 %> - <%= matches[i].score2 %></p>
-			<button>
-				<a href="/details/<%= matches[i].id %>">Details &rarr;</a>
-			</button>
-		</article>
+
+        <a href="/details/<%= matches[i].id %>" class="clickable-card">
+            <article>
+                <h3><%= matches[i].team1 %> - <%= matches[i].team2 %></h3>
+
+                <% if (matches[i].score1 && matches[i].score2) { %>
+                    <p><%= matches[i].score1 %> - <%= matches[i].score2 %></p>
+                <% } else { %>
+                    <p>No score available</p>
+                <% } %>
+
+                <img src="/img/arrow-right.svg" alt="arrow to right">
+            </article>
+         </a>
+
 	<% } %>
+
 <% } else{ %>
 	<p>There are no matches</p>
 <% } %>
+
 </section>
 
 <%- include('../includes/end') %>

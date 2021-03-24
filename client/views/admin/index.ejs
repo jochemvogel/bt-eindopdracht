@@ -11,16 +11,16 @@
 <section>
 <% if (matches !== undefined & matches !== 'No matches') { %>
 	<% for(var i = 0; i < matches.length; i++) { %>
+        <a href="/admin/edit-match/<%= matches[i].id %>" class="clickable-card">
 		<article>
-			<h2><%= matches[i].team1 %> - <%= matches[i].team2 %></h2>
-			<p><%= matches[i].score1 %> - <%= matches[i].score2 %></p>
-			<button>
-				<a href="/admin/edit-match/<%= matches[i].id %>">Edit &rarr;</a>
-			</button>
+			<h3><%= matches[i].team1 %> - <%= matches[i].team2 %></h3>
+            <% if (matches[i].score1 && matches[i].score2) { %>
+                <p><%= matches[i].score1 %> - <%= matches[i].score2 %></p>
+            <% } else { %>
+                <p>No score available</p>
+            <% } %>
 
-            <form action="/admin/remove-match/<%= matches[i].id %>" method="POST">
-                <button type="submit">Remove X</button>
-            </form>
+            <img src="/img/arrow-right.svg" alt="arrow to right">
 		</article>
 	<% } %>
 <% } else{ %>

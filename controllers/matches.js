@@ -20,7 +20,6 @@ function getMatches(req, res) {
 
 	if (matchesObjIsEmpty) {
 		const matches = 'No matches';
-		console.log('yes');
 		res.render('matches/index', {
 			matches,
 		});
