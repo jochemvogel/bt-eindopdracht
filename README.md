@@ -59,11 +59,13 @@ I'm going to test in the following browsers:
 ### Enhancements
 
 1.  **Fancy Menu**
-    a. The menu will go to the bottom of the page (with ID) if JS is not supported. If it is, create some nice animation that will improve the UX.
+    The menu will go to the bottom of the page (with ID) if JS is not supported. If it is, create some nice animation that will improve the UX.
 2.  **CSS grid**
-    a. On mobile the cards aren't that big, but on desktop they will. Because of that I want to use CSS grid to make them responsive. Three next to each other could be better on desktop. What can you do if grid is not supported? I want to find a solution for that (because they somehow were able to do that in the past)
+    On mobile the cards aren't that big, but on desktop they will. Because of that I want to use CSS grid to make them responsive. Three next to each other could be better on desktop. What can you do if grid is not supported? I want to find a solution for that (because they somehow were able to do that in the past)
 3.  **Notification API**
-    a. When a match got updated I want to give the users (that enabled notifications for that match) to get a notification (with the Notification API). However, this is not supported in Safari on iOS. There has to be a way to give a notification. Maybe with a popup? Notification animation in the top? What if JS is disabled? Figure that out.
+    When a match got updated I want to give the users (that enabled notifications for that match) to get a notification (with the Notification API). However, this is not supported in Safari on iOS. There has to be a way to give a notification. Maybe with a popup? Notification animation in the top? What if JS is disabled? Figure that out.
+4.  **Form Validation**
+    Don't really know how I want to do this, but I want to have form validation. I will update this one later on. I.e. use the `onblur` on input fields, but also make it work when JS is disabled (that is the enhancement).
 
 ## :eyeglasses: Overview
 
