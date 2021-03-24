@@ -1,3 +1,4 @@
+const { match } = require('assert');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 const Match = require('../models/match')
@@ -69,32 +70,50 @@ function getEditMatch(req, res) {
 
 function postEditMatch(req, res) {
     const updatedMatch = req.body;
-    let oldMatch = '';
+
     const matchId = req.params.id;
-    // Working on this
-    //
-	// Match.findById(matchId, (match) => {
-    //     oldMatch = match
 
-    //     /*
+    const rawData = fs.readFileSync('./data/data.json');
+    const matchArr = Array.from(JSON.parse(rawData));
 
-    //     ==> rewrite oldMatch to updatedMatch <==
+    const editedMatchIndex = matchArr.findIndex(item => item.id === matchId);
 
-    //     */
+    matchArr.splice(editedMatchIndex, 1)
 
-    //     console.log(oldMatch);
-    //     console.log(updatedMatch);
-    //     res.redirect('/admin')
-	// }
-    // );
+    matchArr.unshift(updatedMatch)
 
-    // const allMatches = Match.getMatchesFromFilee((matches) => {
-    //     return matches;
-    // });
+    const whatToWrite = JSON.stringify(matchArr);
 
-    // setTimeout(() => {
-    //     console.log(allMatches);
-    // }, 1000);
+    fs.writeFile('./data/data.json', whatToWrite, (err) => {
+        if (err) {
+            throw err;
+        }
+        console.log('Succesfully update data.json');
+    });
+
+    res.redirect('/admin');
 }
 
-module.exports = { getAdmin, postAddMatch, getAddMatch, getEditMatch, postEditMatch };
+function postRemoveMatch(req, res) {
+    const matchId = req.params.id;
+
+    const rawData = fs.readFileSync('./data/data.json');
+    const matchArr = Array.from(JSON.parse(rawData));
+
+    const editedMatchIndex = matchArr.findIndex(item => item.id === matchId);
+
+    matchArr.splice(editedMatchIndex, 1)
+
+    const whatToWrite = JSON.stringify(matchArr);
+
+    fs.writeFile('./data/data.json', whatToWrite, (err) => {
+        if (err) {
+            throw err;
+        }
+        console.log('Succesfully update data.json');
+    });
+
+    res.redirect('/admin');
+}
+
+module.exports = { getAdmin, postAddMatch, getAddMatch, getEditMatch, postEditMatch, postRemoveMatch };

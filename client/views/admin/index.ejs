@@ -17,6 +17,10 @@
 			<button>
 				<a href="/admin/edit-match/<%= matches[i].id %>">Edit &rarr;</a>
 			</button>
+
+            <form action="/admin/remove-match/<%= matches[i].id %>" method="POST">
+                <button type="submit">Remove X</button>
+            </form>
 		</article>
 	<% } %>
 <% } else{ %>
