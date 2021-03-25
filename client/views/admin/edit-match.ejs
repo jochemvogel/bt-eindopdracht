@@ -47,7 +47,7 @@
             <% } %>
         </div>
 		<button><a href="/">View</a></button>
-		<button type="submit">Save</button>
+		<button onclick="updateGame()" type="submit">Save</button>
 	</form>
 
     <form action="/admin/remove-match/<%= match.id %>" method="POST">
