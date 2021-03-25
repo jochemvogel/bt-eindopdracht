@@ -1,12 +1,11 @@
 <%- include('../includes/head') %>
 
-<h1>Edit Match</h1>
+<h2>Edit Match</h2>
 
 <a href="/admin">&larr; Go back</a>
 
 <br /><br />
 
-<main>
 	<form action="/admin/edit-match/<%= match.id %>" method="POST">
 		<div>
 			<input type="hidden" name="id" value="<%= match.id %>" />
@@ -25,11 +24,19 @@
 		</div>
 		<div>
 			<label for="score1">Score team 1</label>
-			<input type="number" name="score1" id="" />
+            <% if (match.score1 !== "") { %>
+                <input type="number" name="score1" value="<%= match.score1 %>" />
+            <% } else { %>
+                <input type="number" name="score1" />
+            <% } %>
 		</div>
 		<div>
 			<label for="score2">Score team 2</label>
-			<input type="number" name="score2" id="" />
+            <% if (match.score2 !== "") { %>
+                <input type="number" name="score2" value="<%= match.score2 %>" />
+            <% } else { %>
+                <input type="number" name="score2" />
+            <% } %>
 		</div>
         <div>
             <label for="finished">Game Finished?</label>
@@ -46,7 +53,6 @@
     <form action="/admin/remove-match/<%= match.id %>" method="POST">
         <button type="submit">Remove X</button>
     </form>
-</main>
 
 <%- include('../includes/end') %>
 

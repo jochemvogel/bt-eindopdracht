@@ -4,7 +4,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #f3f3f3;
-    height: 100vh;
+    height: 110vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,6 +18,7 @@ article {
 	padding: 1em;
 	box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
 	margin: 1em;
+    margin-left: -2em;
     background-color: #fefefe;
     display: flex;
     flex-direction: column;
@@ -36,22 +37,28 @@ article h3 {
 article p {
     margin: 0.5em 0;
     justify-self: flex-end;
-    color: rgba(0, 0, 0, 0.5);
+    color: hsl(0, 0%, 50%);
     text-transform: uppercase;
     font-weight: 700;
     font-size: 0.9em;
 }
 
-article img {
+article a button {
     position: absolute;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
-    right: 2%;
-    height: 1.75em;
     background: none;
     border: none;
-    padding: 0;
-    margin: 0 0.5em;
+    width: 20%;
+}
+
+article a button span {
+    display: none;
+}
+
+article a button::after {
+    content:url('/img/arrow-right.svg');
 }
 
 header {
@@ -112,4 +119,57 @@ hr {
 
 .score-container > div > p {
     margin: 0;
+}
+
+
+/* === NAV === */
+nav {
+    margin: 2em 0;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+nav h2 {
+    font-size: 2em;
+}
+
+nav li {
+    margin: 0 1em;
+    font-size: 1.5em;
+}
+
+.nav-btn {
+    width: 5em;
+    height: 5em;
+    bottom: 5%;
+    right: 5%;
+    border-radius: 50%;
+    background-color: #ccc;
+    position: fixed;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-btn:active {
+    transform: scale(0.95);
+}
+
+.nav-btn svg {
+    fill: #fff;
+}
+
+.nav-btn svg rect {
+    border: 2px solid red;
+}
+
+.css-disabled {
+    display: none;
+}
+
+section ol {
+    list-style: none;
 }

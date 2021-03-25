@@ -1,11 +1,11 @@
 <%- include('../includes/head') %>
 
-<h1>Details</h1>
+<h2>Details</h2>
 
 <a href="/">&larr; Go back</a>
 
 <% if (match) { %>
-    <h2><%= match.team1 %> - <%= match.team2 %></h2>
+    <h3><%= match.team1 %> - <%= match.team2 %></h3>
 
     <% if (match.score1 !== "") { %>
     <div class="score-container">
@@ -24,8 +24,6 @@
         <p>No score available</p>
     <% } %>
 
-
-
 <% } %>
 
 <% if (!match) { %>
@@ -34,6 +32,6 @@
 
 <hr />
 
-<h2>Comments</h2>
+<h3>Comments</h3>
 
 <%- include('../includes/end') %>

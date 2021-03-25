@@ -2,15 +2,12 @@
 
 <h2>Matches</h2>
 
-<a href="/admin">Go to admin</a>
-
-
 <section>
 <% if (matches !== undefined & matches !== 'No matches') { %>
+    <ol>
 
 	<% for(var i = 0; i < matches.length; i++) { %>
-
-        <a href="/details/<%= matches[i].id %>" class="clickable-card">
+        <li>
             <article>
                 <h3><%= matches[i].team1 %> - <%= matches[i].team2 %></h3>
 
@@ -20,11 +17,21 @@
                     <p>No score available</p>
                 <% } %>
 
-                <img src="/img/arrow-right.svg" alt="arrow to right">
+
+                <a href="/details/<%= matches[i].id %>">
+                    <button>
+                        <span>
+                            Details
+                        </span>
+                    </button>
+                </a>
             </article>
-         </a>
+        </li>
+
+        <hr class="css-disabled" />
 
 	<% } %>
+</ol>
 
 <% } else{ %>
 	<p>There are no matches</p>
