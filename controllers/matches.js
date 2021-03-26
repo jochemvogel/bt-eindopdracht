@@ -33,9 +33,32 @@ function getMatches(req, res) {
 
 function getDetails(req, res) {
 	const matchId = req.params.id;
+    let jsEnabled = false
+
+    if (req.cookies.js === 'true') {
+        jsEnabled = true
+    }
+
 	Match.findById(matchId, (match) => {
+        const matchTime = match.time
+
+        const matchTimeArr = matchTime.split("T");
+
+        const date = matchTimeArr[0];
+
+        function formatDate (dateStr) {
+            const dArr = dateStr.split('-')
+            return `${dArr[2]}-${dArr[1]}-${dArr[0]}`
+        }
+
+        const formattedDate = formatDate(date)
+        const time = matchTimeArr[1]
+
 		res.render('matches/details', {
 			match,
+            formattedDate,
+            time,
+            jsEnabled
 		});
 	});
 }

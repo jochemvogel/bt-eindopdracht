@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <p><%= new Date(match.time) %></p>
+    <h4><%= formattedDate %> at <%= time %></h4>
 
     <% } else { %>
         <p>No score available</p>
@@ -34,7 +34,9 @@
     <h2>This is not a valid match. Please go back and select a valid one</h2>
 <% } %>
 
-<button onclick="enableNotifications()" class="btn">Enable notifications 🔔</button>
+<% if (jsEnabled === true ) { %>
+    <button onclick="enableNotifications()" class="btn">Enable notifications 🔔</button>
+<% } %>
 
 <hr />
 

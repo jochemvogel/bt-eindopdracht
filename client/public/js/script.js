@@ -1,7 +1,9 @@
+document.cookie = "js=true"
+
 function notifyMe() {
     // If the browser supports notifications
     if (!("Notification" in window)) {
-        console.log("This browser does not support desktop notification");
+        alert("This browser does not support notification");
     }
 
     // If have alredy been granted
@@ -23,12 +25,10 @@ function notifyMe() {
 
 /* Socket simulation */
 function enableNotifications() {
-    setTimeout(() => {
-        notifyMe();
-    }, 5 * 1000);
+    notifyMe();
 
     setInterval(() => {
-        notifyMe(); 
+        notifyMe();
     }, 60 * 1000);
 }
 
@@ -36,7 +36,7 @@ function newNotification(title, body) {
     const options = {
         body,
     }
-    
+
     const notification = new Notification(title, options);
 }
 
