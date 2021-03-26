@@ -2,7 +2,9 @@
 
 <h2>Edit Match</h2>
 
-<a href="/admin">&larr; Go back</a>
+<a href="/admin">
+    <button class="btn">&larr; Go Back</button>
+</a>
 
 <br /><br />
 
@@ -12,46 +14,45 @@
 		</div>
 		<div>
 			<label for="team1">Team 1*</label>
-			<input type="text" name="team1" value="<%= match.team1 %>" maxlength="8" required />
+			<input type="text" name="team1" value="<%= match.team1 %>" maxlength="8" aria-label="Name of team 1" required />
 		</div>
 		<div>
 			<label for="team2">Team 2*</label>
-			<input type="text" name="team2" value="<%= match.team2 %>" maxlength="8" required />
+			<input type="text" name="team2" value="<%= match.team2 %>" maxlength="8" aria-label="Name of team 2" required />
 		</div>
 		<div>
 			<label for="time">Time*</label>
-			<input type="datetime-local" name="time" value="<%= match.time %>"  />
+			<input type="datetime-local" name="time" value="<%= match.time %>" aria-label="Date and time of start of the game"  />
 		</div>
 		<div>
 			<label for="score1">Score team 1</label>
             <% if (match.score1 !== "") { %>
-                <input type="number" name="score1" value="<%= match.score1 %>" />
+                <input type="number" name="score1" value="<%= match.score1 %>" aria-label="Score team 1" />
             <% } else { %>
-                <input type="number" name="score1" />
+                <input type="number" name="score1" aria-label="Score team 1"/>
             <% } %>
 		</div>
 		<div>
 			<label for="score2">Score team 2</label>
             <% if (match.score2 !== "") { %>
-                <input type="number" name="score2" value="<%= match.score2 %>" />
+                <input type="number" name="score2" value="<%= match.score2 %>" aria-label="Score team 2" />
             <% } else { %>
-                <input type="number" name="score2" />
+                <input type="number" name="score2" aria-label="Score team 2" />
             <% } %>
 		</div>
-        <div>
+        <div class="finished">
             <label for="finished">Game Finished?</label>
             <% if (match.finished) { %>
-                <input type="checkbox" name="finished" id="" checked>
+                <input type="checkbox" name="finished" aria-label="Is game finished" checked>
             <% } else { %>
-                <input type="checkbox" name="finished" id="">
+                <input type="checkbox" name="finished" aria-label="Is game finished">
             <% } %>
         </div>
-		<button><a href="/">View</a></button>
-		<button onclick="updateGame()" type="submit">Save</button>
+		<button class="btn add-btn" onclick="updateGame()" type="submit">Save</button>
 	</form>
 
     <form action="/admin/remove-match/<%= match.id %>" method="POST">
-        <button type="submit">Remove X</button>
+        <button class="btn delete-btn" type="submit">Remove Match</button>
     </form>
 
 <%- include('../includes/end') %>

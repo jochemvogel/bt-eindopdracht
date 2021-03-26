@@ -1,8 +1,12 @@
 <%- include('../includes/head') %>
 
-<h2>Admin / Matches</h2>
+<h2>Matches Admin</h2>
 
-<a href="/admin/add-match">Add Match</a>
+<a href="/admin/add-match">
+    <button class="btn">
+        Add Match
+    </button>
+</a>
 
 <section>
 
@@ -27,9 +31,8 @@
                     <p>No score available</p>
                 <% } %>
 
-
                 <a href="/admin/edit-match/<%= matches[i].id %>">
-                    <button>
+                    <button class="edit-match-btn">
                         <span>
                             Edit Match
                         </span>

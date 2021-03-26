@@ -4,15 +4,23 @@
 
 <section>
 <% if (matches !== undefined & matches !== 'No matches') { %>
+
     <ol>
 
 	<% for(var i = 0; i < matches.length; i++) { %>
+
         <li>
             <article>
                 <h3><%= matches[i].team1 %> - <%= matches[i].team2 %></h3>
 
-                <% if (matches[i].score1 && matches[i].score2) { %>
-                    <p><%= matches[i].score1 %> - <%= matches[i].score2 %></p>
+               <% if (matches[i].score1 && matches[i].score2) { %>
+
+                    <% if (matches[i].finished) { %>
+                        <p><%= matches[i].score1 %> - <%= matches[i].score2 %> ✅</p>
+                    <% } else { %>
+                        <p><%= matches[i].score1 %> - <%= matches[i].score2 %> (playing..)</p>
+                    <% }%>
+
                 <% } else { %>
                     <p>No score available</p>
                 <% } %>

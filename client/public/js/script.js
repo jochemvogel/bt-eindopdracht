@@ -21,11 +21,22 @@ function notifyMe() {
     }
 }
 
+/* Socket simulation */
+function enableNotifications() {
+    setTimeout(() => {
+        notifyMe();
+    }, 5 * 1000);
+
+    setInterval(() => {
+        notifyMe(); 
+    }, 60 * 1000);
+}
+
 function newNotification(title, body) {
     const options = {
         body,
     }
-
+    
     const notification = new Notification(title, options);
 }
 

@@ -62,12 +62,27 @@ article a button span {
     display: none;
 }
 
+.edit-match-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.edit-match-btn span {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
 article a button::after {
     content:url('/img/arrow-right.svg');
+    transform: translateY(10%);
 }
 
 header {
-    height: 6em;
+    height: 10em;
     width: 100%;
     display: flex;
     align-items: center;
@@ -88,12 +103,6 @@ main {
   margin-top: 1em;
   border-radius: 2em;
   max-width: 900px;
-}
-
-/* === CLASSES === */
-
-.clickable-card {
-    text-decoration: none;
 }
 
 /* === Details page === */
@@ -164,14 +173,6 @@ nav li {
     transform: scale(0.95);
 }
 
-.nav-btn svg {
-    fill: #fff;
-}
-
-.nav-btn svg rect {
-    border: 2px solid red;
-}
-
 .css-disabled {
     display: none;
 }
@@ -180,3 +181,87 @@ section ol {
     list-style: none;
     padding-left: 0;
 }
+
+/* FORMS */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25em;
+    clear: both;
+}
+
+form .finished {
+    margin: 1em 0;
+    align-self: center;
+}
+
+input[type="checkbox"] {
+    margin: 1em;
+    transform: scale(3);
+}
+
+form input:not(input[type="checkbox"]):not(input[type="number"]) {
+    font-size: 1em;
+    margin: 0.5em 0;
+    width: 100%;
+    box-shadow: inset 1px 3px 2px rgba(0, 0, 0, 0.25);
+    height: 2em;
+    border-radius: 0.2em;
+    text-align: center;
+}
+
+textarea {
+    font-size: 1em;
+    margin: 0.5em 0;
+    width: 100%;
+    box-shadow: inset 1px 3px 2px rgba(0, 0, 0, 0.25);
+}
+
+form input[type="number"] {
+    width: 15%;
+    text-align: center;
+    font-size: 1em;
+    margin: 0.5em 0;
+    box-shadow: inset 1px 3px 2px rgba(0, 0, 0, 0.25);
+    height: 1.5em;
+    border-radius: 0.2em;
+    text-align: center;
+}
+
+textarea {
+    vertical-align: top;
+}
+
+
+.btn {
+    border: none;
+    background-color: rgb(139, 139, 139);
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.75em 2.5em;
+    margin: 0.5em;
+    border-radius: 0.25em;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+    align-self: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.add-btn {
+    background-color: hsl(120, 60%, 29%);
+    color: #f3f3f3;
+}
+
+.delete-btn {
+    background-color: hsl(0, 69%, 46%);
+    color: #f3f3f3;
+}
+
+

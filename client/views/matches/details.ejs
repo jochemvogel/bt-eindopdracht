@@ -2,7 +2,11 @@
 
 <h2>Details</h2>
 
-<a href="/">&larr; Go back</a>
+<a href="/">
+    <button class="btn">
+        &larr; Go Back
+    </button>
+</a>
 
 <% if (match) { %>
     <h3><%= match.team1 %> - <%= match.team2 %></h3>
@@ -30,12 +34,25 @@
     <h2>This is not a valid match. Please go back and select a valid one</h2>
 <% } %>
 
+<button onclick="enableNotifications()" class="btn">Enable notifications 🔔</button>
+
 <hr />
 
-<!-- Todo: JS disabled and/or not supported. How? -->
-
-<button onclick="notifyMe()">Enable notifications</button>
-
 <h3>Comments</h3>
+
+<form action="/admin/edit-match/<%= match.id %>" method="POST">
+    <div>
+        <input type="hidden" name="id" value="<%= match.id %>" />
+    </div>
+    <div>
+        <label for="team1">Name *</label>
+        <input type="text" name="name" value="<%= match.team1 %>" maxlength="8" aria-label="Name of team 1" required />
+    </div>
+    <div>
+        <label for="message">Message*</label>
+        <textarea name="message" value="<%= match.team2 %>" rows="4" aria-label="Name of team 2" required></textarea>
+    </div>
+    <button class="btn add-btn" type="submit">Add comment</button>
+</form>
 
 <%- include('../includes/end') %>
