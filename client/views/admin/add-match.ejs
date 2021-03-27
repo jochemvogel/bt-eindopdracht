@@ -1,12 +1,12 @@
 <%- include('../includes/head') %>
 
-<h1>Add Match</h1>
+<h2>Add Match</h2>
 
-<a href="/admin">&larr; Go back</a>
+<a href="/admin">
+    <button class="btn">&larr; Go Back</button>
+</a>
 
-<br /><br />
-
-<main>
+<section>
 	<form action="/admin/add-match" method="POST">
 		<div>
 			<input type="hidden" name="id" value="<%= id %>" />
@@ -31,9 +31,8 @@
 			<label for="score2">Score team 2</label>
 			<input type="number" name="score2" id="" />
 		</div>
-		<button><a href="/">View</a></button>
-		<button type="submit">Save</button>
+		<button type="submit" class="btn add-btn">Save</button>
 	</form>
-</main>
+</section>
 
 <%- include('../includes/end') %>
