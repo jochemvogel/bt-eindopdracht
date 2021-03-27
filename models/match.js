@@ -17,7 +17,7 @@ const getMatchesFromFile = (cb) => {
 	});
 };
 
-module.exports = class Product {
+module.exports = class Match {
 	constructor(id, team1, team2, time, score1, userId) {
 		this.id = id;
 		this.team1 = team1;

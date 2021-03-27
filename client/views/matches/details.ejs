@@ -14,11 +14,11 @@
     <% if (match.score1 !== "") { %>
     <div class="score-container">
         <div>
-            <p><%= match.score1 %></p>
+            <p><span class="css-disabled">Score team 1: </span><%= match.score1 %></p>
         </div>
 
         <div>
-            <p><%= match.score2 %></p>
+            <p><span class="css-disabled">Score team 2: </span><%= match.score2 %></p>
         </div>
     </div>
 
@@ -40,21 +40,35 @@
 
 <hr />
 
-<h3>Comments</h3>
+<section>
 
-<form action="/admin/edit-match/<%= match.id %>" method="POST">
-    <div>
-        <input type="hidden" name="id" value="<%= match.id %>" />
-    </div>
-    <div>
-        <label for="team1">Name *</label>
-        <input type="text" name="name" value="<%= match.team1 %>" maxlength="8" aria-label="Name of team 1" required />
-    </div>
-    <div>
-        <label for="message">Message*</label>
-        <textarea name="message" value="<%= match.team2 %>" rows="4" aria-label="Name of team 2" required></textarea>
-    </div>
-    <button class="btn add-btn" type="submit">Add comment</button>
-</form>
+    <h3>Comments</h3>
+
+    <article class="comment">
+        <h4>John Doe</h4>
+        <p class="comment-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, laborum nisi maiores animi beatae inventore dolorem quo. Amet veritatis ducimus vero ea magnam officia placeat accusantium nihil adipisci, officiis eaque fugiat delectus, reprehenderit sunt voluptas? Tempora maxime voluptate reprehenderit sunt!</p>
+    </article>
+
+    <article class="comment">
+        <h4>Jochem Vogel</h4>
+        <p class="comment-body">Ik heb ervoor gekozen om de comments niet dynamisch te maken. Het zou mij simpelweg te veel tijd kosten.</p>
+    </article>
+
+    <form action="/admin/edit-match/<%= match.id %>" method="POST">
+        <div>
+            <input type="hidden" name="id" value="<%= match.id %>" />
+        </div>
+        <div>
+            <label for="team1">Name *</label>
+            <input type="text" name="name" value="<%= match.team1 %>" maxlength="8" aria-label="Name of team 1" required />
+        </div>
+        <div>
+            <label for="message">Message*</label>
+            <textarea name="message" value="<%= match.team2 %>" rows="4" aria-label="Name of team 2" required></textarea>
+        </div>
+        <button class="btn add-btn" type="submit">Add comment</button>
+    </form>
+
+</section>
 
 <%- include('../includes/end') %>
