@@ -78,12 +78,6 @@ section {
     height: 3em;
 }
 
-@media screen and (min-width: 768px) {
-    .match-card {
-        width: 80%;
-    }
-}
-
 .match-card h3 {
     font-size: 1.25em;
     margin: 0;
@@ -208,6 +202,7 @@ hr {
     position: absolute;
     height: 100%;
     width: 100vw;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.97);
     z-index: 2;
 }
@@ -385,10 +380,16 @@ textarea {
 }
 
 .comment:last-of-type {
-    margin-bottom: 4em;
+    margin-bottom: 3em;
 }
 
 .comment-body {
     text-align: center;
     padding: 0 2em;
+}
+
+@media screen and (min-width: 1200px) {
+    .comment-body {
+        padding: 0 12em;
+    }
 }
