@@ -19,8 +19,12 @@
         <input type="text" name="team2" value="<%= match.team2 %>" maxlength="8" aria-label="Name of team 2" required />
     </div>
     <div>
+        <label for="date">Date*</label>
+        <input type="date" name="date" value="<%= match.date %>" aria-label="Date of the game"  />
+    </div>
+    <div>
         <label for="time">Time*</label>
-        <input type="datetime-local" name="time" value="<%= match.time %>" aria-label="Date and time of start of the game"  />
+        <input type="time" name="time" value="<%= match.time %>" aria-label="Time when the game starts"  />
     </div>
     <div>
         <label for="score1">Score team 1</label>
