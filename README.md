@@ -42,33 +42,46 @@ I'm going to test in the following browsers:
 4.  **Samsung/Android:** Samsung Internet (on Samsung Galaxy A51) _=> Best sold Samsung phone 2020_
 5.  **Non-Samsung/Android):** UC Browser (on Moto G7 Play)
 
- <details>
+#### Screenshots of tested browsers
+
+<details>
 <summary>Screenshot Chrome 88 (on Windows)</summary>
-No screenshots for this browser. Tested Edge 88 as well (also a Chromium browser). I can conclude that everything works on modern Chromium browsers.
+Tested Edge 88 as well (also a Chromium browser). I can conclude that everything works on modern Chromium browsers. I choose to disable JS and CSS instead.
 
-I choose to disable JS and CSS instead.
-
-**Disabled CSS:**
+**Disabled CSS on /:**
 
 ![Disabled CSS 1](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/chrome/Screenshot%202021-03-28%20at%2020.06.53.png)
 
+**Disabled CSS on /details:**
+
 ![Disabled CSS 2](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/chrome/Screenshot%202021-03-28%20at%2020.06.53.png)
 
-**Disabled JS:**
+**Disabled JS on /details (notification button is gone):**
 
 ![Disabled JS => Notification button is gone](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/chrome/Screenshot%202021-03-28%20at%2020.07.58.png)
+
+**Disabled JS (menu btn will go to bottom page):**
 
 ![Disabled JS => Navigation ](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/chrome/Screenshot%202021-03-28%20at%2020.08.27.png)
 
 </details>
 
- <details>
+<details>
 <summary>Screenshot Firefox 51 (on Mac)</summary>
+
+**Modal out the view **
+
 ![Modal out the view](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/firefox/Screenshot%202021-03-28%20at%2017.38.53.png)
+
+**Modal back in view**
 
 ![Modal back in view](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/firefox/Screenshot%202021-03-28%20at%2017.42.37.png)
 
+**Date time local not supported**
+
 ![Date time local not supported](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/firefox/Screenshot%202021-03-28%20at%2017.39.19.png)
+
+**Request notifications**
 
 ![Request notifications](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/firefox/Screenshot%202021-03-28%20at%2017.40.45.png)
 
@@ -77,33 +90,47 @@ I choose to disable JS and CSS instead.
  <details>
 <summary>Screenshot Safari iPhone (on iPhone 12 mini)</summary>
 
+**Screenshot iOS**
+
 ![Screenshot iOS](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/ios/Screenshot%202021-03-28%20at%2017.58.10.png)
 
-![Error when notification requested](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/ios/Screenshot%202021-03-28%20at%2018.01.38.png)
+**Alert when notification requested**
+
+![Alert when notification requested](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/ios/Screenshot%202021-03-28%20at%2018.01.38.png)
 
 </details>
 
  <details>
 <summary>Screenshot Samsung Internet (on Samsung Galaxy A51)</summary>
 
+**Custom font does not work**
+
 ![Custom font does not work](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/android/Screenshot%202021-03-28%20at%2017.51.34.png)
+
+**Notifications does work**
 
 ![Notifications does work](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/android/Screenshot%202021-03-28%20at%2017.53.15.png)
 
 </details>
 
- <details>
+<details>
 <summary>Screenshot UC Browser (on Moto G7 Play)</summary>
 
-![Works, excepts the custom fonts](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/motorola/Screenshot%202021-03-28%20at%2018.08.46.png)
+**Works, except the custom fonts**
+
+![Works, except the custom fonts](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/motorola/Screenshot%202021-03-28%20at%2018.08.46.png)
+
+**Notifications do work**
 
 ![Notifications do work](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/motorola/Screenshot%202021-03-28%20at%2018.09.02.png)
+
+**Date time local also works**
 
 ![Date time local also works](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/motorola/Screenshot%202021-03-28%20at%2018.09.19.png)
 
 </details>
 
-#### Test Report
+### Test Report
 
 I tested:
 
@@ -115,10 +142,6 @@ I tested:
 <details>
 <summary>Chrome 88 (Without CSS and JS)</summary>
 The test in Chrome 88 and Edge 88 (both Chromium) were both good. Everything works. With CSS and JS disabled the core functionalities still worked. Screenshots can be found in the previous chapter
-</details>
-
-<details>
-<summary></summary>
 </details>
 
 <details>
@@ -142,6 +165,7 @@ I decided to choose for the first one, because the user can't do anything wrong 
 <summary>iOS Safari</summary>
 Everything works, except the notifications. Those are not allowed/possible in iOS. As written earlier in the README: in the ideal scenario you want to disable this, but because of the server side JS I do not know how to do that.
 
+
 In client side JS you could do something like this:
 
 ```javascript
@@ -163,7 +187,7 @@ Custom fonts do not work. Fortunately I’ve callback fonts, so it will 'fall ba
 
 Notifications work (asking for permission), but it’s not sending anything. So that’s weird. Maybe it's a thing with the VM, because I use Browserstack.
 
-On the same device, but on Chrome I got
+On the same device, but on Chrome I got:
 
 ```
 script.js:41 Uncaught TypeError: Failed to construct 'Notification': Illegal constructor. Use ServiceWorkerRegistration.showNotification() instead.
@@ -177,10 +201,6 @@ That could be just a Chrome thing. On Samsung Internet I do not get the same err
 <summary>UC Browser</summary>
 This was (unexpectedly) a pretty good browser. Only the custom fonts did not work
 </details>
-
-#####
-
-#####
 
 ### Enhancements
 
@@ -223,8 +243,10 @@ I'm a huge fan of custom properties in CSS and use them always. But there are so
 ### Screenshot
 
 <details>
+
 ![Screenshot app](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/Screenshot%202021-03-28%20at%2020.01.26.png)
-<summary></summary>
+<summary>Screenshot app</summary>
+
 </details>
 
 ### Design
