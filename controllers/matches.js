@@ -40,24 +40,16 @@ function getDetails(req, res) {
     }
 
 	Match.findById(matchId, (match) => {
-        const matchTime = match.time
-
-        const matchTimeArr = matchTime.split("T");
-
-        const date = matchTimeArr[0];
-
         function formatDate (dateStr) {
             const dArr = dateStr.split('-')
             return `${dArr[2]}-${dArr[1]}-${dArr[0]}`
         }
 
-        const formattedDate = formatDate(date)
-        const time = matchTimeArr[1]
+        const formattedDate = formatDate(match.date)
 
 		res.render('matches/details', {
 			match,
             formattedDate,
-            time,
             jsEnabled
 		});
 	});
