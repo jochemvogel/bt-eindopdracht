@@ -87,7 +87,7 @@ section {
 .match-card p {
     margin: 0.5em 0;
     justify-self: flex-end;
-    color: hsl(0, 0%, 50%);
+    color: hsl(0, 0%, 34%);
     text-transform: uppercase;
     font-weight: 700;
     font-size: 0.9em;
