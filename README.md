@@ -42,6 +42,10 @@ You can read the test report (and the individual reports in detail) in the [Wiki
 
 #### What are enhancements?
 
+You can see Progressive Enhancement as way to make sure that your website is accessible for everyone. Despite browser, internet speed, JS/CSS enabled/disabled, sight, mobility etc. etc. You just want to make sure that EVERYONE can use your website. Progressive Enhancement is basically the umbrella that covers everything (Feature detection, accessbility, speed optimizations etc. ). It's the combination of all things that make your website more accessible to everyone.
+
+In Progressive Enhancement you basically work with three layers. You start with making the basic content and functionalty should be accessible to all web browsers. Then you enhance the layout with CSS and eventually you add JS (and extra CSS like animations etc.) where neccessary.
+
 #### Enhancements I did do
 
 1.  Fancy Menu
@@ -61,6 +65,19 @@ There are a few enhancements where I'd thought about, but I had no time to imple
 3.  CSS Custom Properties
 
 A more detailed overview of all the enhancements I did not do and why can be read in the [Wiki](https://github.com/jochemvogel/bt-eindopdracht/wiki/Enhancements-I-did-not-do).
+
+### Feature Detection
+
+#### What is Feature Detection?
+
+Feature detection (or feature testing) is checking whether a browser supports a feature or not. I.e. in CSS you can do this with `@supports` to check if a CSS technology is supported by a browser. If it's not, you can add a fallback/default.
+
+In JavaScript you can do the same. I did this with the Notifications API. I checked if the browser supports this and if not don't display the notifications (and even remove the notifications button at all)
+
+A more overview about how I did implement Feature Detection can be found in the [Wiki](https://github.com/jochemvogel/bt-eindopdracht/wiki/Feature-Detection).
+
+The reason you do Feature Detection is because you don't want to exclude any users, but on the other hand deliver a better experience to users that have better technology. An easy example is grid in CSS. It's a great way to quickly create a grid, but there are some (older) browsers that don't support it. It's brutal to say you don't care, because most of the users use browsers that are supported. There is a small proportion of the users that uses a older device. Maybe they don't care about new technology. Maybe they're poor and can't afford a new one. There are plenty of reasons. Not optimizing your website for those is basically discrimination.
+
 
 ## :eyeglasses: Overview
 
