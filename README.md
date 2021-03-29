@@ -2,7 +2,9 @@
 
 **[Live link](https://bt-eindopdracht.herokuapp.com/)**
 
-In GameChanger you can get an overview of different sport games. Besides that you can also enable alerts, so you won't miss anything from your favorite sport team(s).
+In GameChanger you can get an overview of different sport games. Besides that you can also enable alerts, so you won't miss anything from your favourite sport team(s).
+
+This README is a summary of everything I did. I often refer to the Wiki for more details. If you want to read it by yourself, go to the [Wiki](https://github.com/jochemvogel/bt-eindopdracht/wiki).
 
 ## Table of Contents
 
@@ -22,15 +24,7 @@ _The course **Browser Technologies** is about learning to build robust and acces
 ### Usecase
 
 **Sports match score website**
-I want to pass on the scores or times of a sports match to interested parties, who can then respond.
-
-**Requirements**
-
--   Admin interface where you can create a competition
--   The admin must be able to enter scores or times for each match
--   Users must be able to register for certain competitions (overview screen)
--   Users who follow a match will be notified when new information arrives. (How do you do this if the user is following multiple matches?)
--   Users can give a response to this, which can be read by other users (and the admin). The admin must be able to remove comments.
+I want to pass on the scores or times of a sports match to interested parties, who can then respond. More information about the use case can be found in the [Wiki](https://github.com/jochemvogel/bt-eindopdracht/wiki/Use-Case).
 
 ### Browser testing
 
@@ -39,214 +33,41 @@ I'm going to test in the following browsers:
 1.  **Chromium:** Chrome 88 (on Windows) _=> based on [statcounter](https://gs.statcounter.com/browser-version-market-share/all/netherlands) this is the most used browser in the Netherlands atm._
 2.  **Non-Chromium:** Firefox 51 (on Mac) _=> doesn't support css grid_
 3.  **iOS:** Safari iPhone (on iPhone 12 mini)
-4.  **Samsung/Android:** Samsung Internet (on Samsung Galaxy A51) _=> Best sold Samsung phone 2020_
+4.  **Samsung/Android:** Samsung Internet (on Samsung Galaxy A51) _=> Most sold Samsung phone 2020_
 5.  **Non-Samsung/Android):** UC Browser (on Moto G7 Play)
 
-#### Screenshots of tested browsers
-
-<details>
-<summary>Screenshot Chrome 88 (on Windows)</summary>
-Tested Edge 88 as well (also a Chromium browser). I can conclude that everything works on modern Chromium browsers. I choose to disable JS and CSS instead.
-
-**Disabled CSS on /:**
-
-![Disabled CSS 1](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/chrome/Screenshot%202021-03-28%20at%2020.06.53.png)
-
-**Disabled CSS on /details:**
-
-![Disabled CSS 2](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/chrome/Screenshot%202021-03-28%20at%2020.06.53.png)
-
-**Disabled JS on /details (notification button is gone):**
-
-![Disabled JS => Notification button is gone](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/chrome/Screenshot%202021-03-28%20at%2020.07.58.png)
-
-**Disabled JS (menu btn will go to bottom page):**
-
-![Disabled JS => Navigation ](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/chrome/Screenshot%202021-03-28%20at%2020.08.27.png)
-
-</details>
-
-<details>
-<summary>Screenshot Firefox 51 (on Mac)</summary>
-
-**Modal out the view **
-
-![Modal out the view](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/firefox/Screenshot%202021-03-28%20at%2017.38.53.png)
-
-**Modal back in view**
-
-![Modal back in view](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/firefox/Screenshot%202021-03-28%20at%2017.42.37.png)
-
-**Date time local not supported**
-
-![Date time local not supported](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/firefox/Screenshot%202021-03-28%20at%2017.39.19.png)
-
-**Request notifications**
-
-![Request notifications](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/firefox/Screenshot%202021-03-28%20at%2017.40.45.png)
-
-</details>
-
- <details>
-<summary>Screenshot Safari iPhone (on iPhone 12 mini)</summary>
-
-**Screenshot iOS**
-
-![Screenshot iOS](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/ios/Screenshot%202021-03-28%20at%2017.58.10.png)
-
-**Alert when notification requested**
-
-![Alert when notification requested](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/ios/Screenshot%202021-03-28%20at%2018.01.38.png)
-
-</details>
-
- <details>
-<summary>Screenshot Samsung Internet (on Samsung Galaxy A51)</summary>
-
-**Custom font does not work**
-
-![Custom font does not work](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/android/Screenshot%202021-03-28%20at%2017.51.34.png)
-
-**Notifications does work**
-
-![Notifications does work](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/android/Screenshot%202021-03-28%20at%2017.53.15.png)
-
-</details>
-
-<details>
-<summary>Screenshot UC Browser (on Moto G7 Play)</summary>
-
-**Works, except the custom fonts**
-
-![Works, except the custom fonts](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/motorola/Screenshot%202021-03-28%20at%2018.08.46.png)
-
-**Notifications do work**
-
-![Notifications do work](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/motorola/Screenshot%202021-03-28%20at%2018.09.02.png)
-
-**Date time local also works**
-
-![Date time local also works](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/motorola/Screenshot%202021-03-28%20at%2018.09.19.png)
-
-</details>
-
-### Test Report
-
-I tested:
-
-1.  Custom Fonts
-2.  Modal (menu)
-3.  Date and time input types
-4.  Notifications API
-
-<details>
-<summary>Chrome 88 (Without CSS and JS)</summary>
-The test in Chrome 88 and Edge 88 (both Chromium) were both good. Everything works. With CSS and JS disabled the core functionalities still worked. Screenshots can be found in the previous chapter
-</details>
-
-<details>
-<summary>Firefox 51</summary>
-First I did not specify `left: 0;` and `top: 0;` on the modal, so it was half on the page. This was a quick fix by adding this to the modal.
-
-Besides that `<input type="datetime-local">` is not supported in this browser. On caniuse.com you can see that 'Date and time input types' are supported in Firefox 57 and higher. And even worse: `datetime-local` is not supported in Firefox at all. `<input type="datetime-local">` returns `2021-03-28T19:39`, so let the user fill in it's own date is not really an option.
-
-MDN says: _"Because of the limited browser support for `datetime-local`, and the variations in how the inputs work, it may currently still be best to use a framework or library to present these, or to use a custom input of your own. Another option is to use separate `date` and `time` inputs, each of which is more widely supported than `datetime-local`"_
-
-I could do two things:
-
-1.  As MDN suggesties: Add a separate date and time.
-2.  Make a check if the browser supports the input datetimelocal. If it does, do nothing. Otherwise display a text field.
-
-I decided to choose for the first one, because the user can't do anything wrong then. I had to rewrite some stuff, but in the end Firefox users can also edit/add matches.
-
-</details>
-
-<details>
-<summary>iOS Safari</summary>
-Everything works, except the notifications. Those are not allowed/possible in iOS. As written earlier in the README: in the ideal scenario you want to disable this, but because of the server side JS I do not know how to do that.
-
-
-In client side JS you could do something like this:
-
-```javascript
-const ua = navigator.userAgent.toLowerCase();
-const notificationBtn = document.getQuerySelector(‘.notification-btn’);
-
-if (ua.includes("safari")) {
-	if (ua.includes("mobile")) {
-		notificationBtn.hidden = true (or notificationBtn.style.display = “none”)
-	}
-}
-```
-
-</details>
-
-<details>
-<summary>Samsung Internet</summary>
-Custom fonts do not work. Fortunately I’ve callback fonts, so it will 'fall back' to cursive.
-
-Notifications work (asking for permission), but it’s not sending anything. So that’s weird. Maybe it's a thing with the VM, because I use Browserstack.
-
-On the same device, but on Chrome I got:
-
-```
-script.js:41 Uncaught TypeError: Failed to construct 'Notification': Illegal constructor. Use ServiceWorkerRegistration.showNotification() instead.
-```
-
-That could be just a Chrome thing. On Samsung Internet I do not get the same error in the console. I even turned the notifications on and off and that didn't work either. Haven't figured it out yet. Seems to be something with the Service Worker, but haven't implemented that in this project.
-
-</details>
-
-<details>
-<summary>UC Browser</summary>
-This was (unexpectedly) a pretty good browser. Only the custom fonts did not work
-</details>
+You can read the test report (and the individual reports in detail) in the [Wiki](https://github.com/jochemvogel/bt-eindopdracht/wiki/Test-Report).
 
 ### Enhancements
 
-1.  **Fancy Menu**
+#### What are enhancements?
 
-The menu will go to the bottom of the page (with ID) if JS is not supported. If it is, create some nice menu that will improve the UX. With CSS disabled the whole button will disappear and the menu will be accessible on the bottom of the page.
+#### Enhancements I did do
 
-2.  **Notification API**
+1.  Fancy Menu
+2.  Notification API
+3.  Icons
+4.  Local fonts
 
-When a match got updated I want to give the users (that enabled notifications for that match) to get a notification (with the Notification API). However, this is not supported in Safari on iOS. It's also not possible with JS disabled. Because of that the **Enable Notifications** button is disabled when JS is disabled. Although, I was not be able to show the button based on the browser support. I decided to check this JS. When notifications are not supported, the user will see an alert with the message that it is not supported. In the ideal situation you want to disable the whole button when it's not supported, but I do not know (yet) how to handle this (client side => i.e. with a query selector) in a server side application.
-
-3.  **Icons**
-
-I use a few icons (menu & view match), but they do not improve the UX of users that have CSS disabled. Because of that I used the pseudo `::after` element for those images. With CSS enabled you get some nice icons, but CSS disabled you won't see those.
-
-4.  **Local fonts**
-
-I downloaded some Google Fonts and put them to a local folder `/public/fonts`. A link the the Google Fonts will be an extra request. When the user has slow internet, this could cause a problem. To fix this I added local fonts AND used fallback fonts.
+A more detailed overview of all the enhancements can be read in the [Wiki](https://github.com/jochemvogel/bt-eindopdracht/wiki/Enhancements-I-did-do).
 
 #### Enhancements I did not do
 
 There are a few enhancements where I'd thought about, but I had no time to implement those.
 
-1.  **Form Validation**
+1.  Form Validation
+2.  Web Sockets
+3.  CSS Custom Properties
 
-During a lecture I heard about the `onblur` on input fields. I could've added that. I.e. I have a max-length of 8 on the name of teams. But when you hit that 8 characters, you simple can't type anymore. Preferably you get an instant message. I don't know how I could do this, but it will improve the UX.
-
-This is the only use case where I could implement this. Because of that I choose to not spend time on form validation.
-
-2.  **Web Sockets**
-
-It's not really an enhancement, but I did try to implement websockets. When you save a match, a message will be emitted (trigger) and a notification will be fired (action). Didn't work out well. I had my server running, but for some reason the whole server side/client side and different ports resulted in some problems. In a next course we will work with web sockets, so skipped it for now.
-
-3.  **CSS Custom Properties**
-
-I'm a huge fan of custom properties in CSS and use them always. But there are some browser that not support those. It could be an idea to add those custom properties and also add a `@supports` on some places in the CSS. I've not figured out how to do this correctly. Would simple take me too much time to implement this, so skipped it for now.
+A more detailed overview of all the enhancements I did not do and why can be read in the [Wiki](https://github.com/jochemvogel/bt-eindopdracht/wiki/Enhancements-I-did-not-do).
 
 ## :eyeglasses: Overview
 
 ### Screenshot
 
 <details>
-
 ![Screenshot app](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/Screenshot%202021-03-28%20at%2020.01.26.png)
-<summary>Screenshot app</summary>
-
+<summary></summary>
 </details>
 
 ### Design
@@ -277,21 +98,7 @@ I'm a huge fan of custom properties in CSS and use them always. But there are so
 
 The wireflow is made based on the pleasurable layer. The functional layer will be the (semantic) HTML. After that I'll add the styling (as sketched in the wireflow). I will also add the icons in this layer. Eventually the 'fancy' menu will be added in the pleasurable layer.
 
-### Layers
-
-#### Functional/Reliable
-
-I started by designing the app, so I knew how the app would look eventually. Then I started with implementing the HTML. I thought about semantic tags I could use. I.e. the cards with the match information could be an `<article>` and the navigation had to be a `<nav>`.
-
-#### Usable
-
-After implementing that I made the choice to now open (and edit) the HTML anymore. Why? Because changing the styling (CSS) won't change the structure of the HTML. I started editing the app, so it would look like the design. Did not add a lot of extra features/transitions. Just the styling.
-
-During this layer I also ofter turned off the CSS to look if everything looks fine. Did not change HTML, but just to be sure.
-
-#### Pleasurable
-
-Eventually I added some extra features to it. For example the fancy menu. I also added some hover effects on elements that are interactive. This could be done in the usable step, because a simple `transform: scale(1.05)` is not a huge thing. But officially this is part of the pleasurable layer, so I decided to add it there.
+A more detailed overview of all the layers of the final app can be read in the [Wiki](https://github.com/jochemvogel/bt-eindopdracht/wiki/Layers).
 
 ## :gear: Installation
 
