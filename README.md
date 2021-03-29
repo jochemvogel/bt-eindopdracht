@@ -48,7 +48,7 @@ You can read the test report (and the individual reports in detail) in the [Wiki
 2.  Notification API
 3.  Icons
 4.  Local fonts
-5.  Accessibility [(read more)](https://github.com/jochemvogel/bt-eindopdracht/wiki/Accessibility)
+5.  Accessibility
 
 A more detailed overview of all the enhancements can be read in the [Wiki](https://github.com/jochemvogel/bt-eindopdracht/wiki/Enhancements-I-did-do).
 
