@@ -14,11 +14,11 @@
     <% if (match.score1 !== "") { %>
     <div class="score-container">
         <div>
-            <p><span class="css-disabled">Score team 1: </span><%= match.score1 %></p>
+            <h4><span class="css-disabled">Score team 1: </span><%= match.score1 %></h4>
         </div>
 
         <div>
-            <p><span class="css-disabled">Score team 2: </span><%= match.score2 %></p>
+            <h4><span class="css-disabled">Score team 2: </span><%= match.score2 %></h4>
         </div>
     </div>
 
@@ -60,11 +60,11 @@
         </div>
         <div>
             <label for="team1">Name *</label>
-            <input type="text" name="name" value="<%= match.team1 %>" maxlength="8" aria-label="Name of team 1" required />
+            <input type="text" id="team1" name="name" value="<%= match.team1 %>" maxlength="8" aria-label="Name of team 1" required />
         </div>
         <div>
             <label for="message">Message*</label>
-            <textarea name="message" value="<%= match.team2 %>" rows="4" aria-label="Name of team 2" required></textarea>
+            <textarea name="message" id="message" value="<%= match.team2 %>" rows="4" aria-label="Name of team 2" required></textarea>
         </div>
         <button class="btn add-btn" type="submit">Add comment</button>
     </form>

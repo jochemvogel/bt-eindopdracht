@@ -3,48 +3,45 @@
 <h2>Matches</h2>
 
 <section>
-<% if (matches !== undefined & matches !== 'No matches') { %>
+    <% if (matches !== undefined & matches !== 'No matches') { %> <% for(var i =
+    0; i < matches.length; i++) { %>
 
-    <ol>
+    <article class="match-card">
+        <h3>
+            <%= matches[i].team1 %> - <%= matches[i].team2 %>
+        </h3>
 
-	<% for(var i = 0; i < matches.length; i++) { %>
+        <% if (matches[i].score1 && matches[i].score2) { %>
 
-        <li>
-            <article class="match-card">
-                <h3><%= matches[i].team1 %> - <%= matches[i].team2 %></h3>
+            <% if (matches[i].finished) { %>
 
-               <% if (matches[i].score1 && matches[i].score2) { %>
+                <p><%= matches[i].score1 %> - <%= matches[i].score2 %> ✅</p>
+        <% } else { %>
 
-                    <% if (matches[i].finished) { %>
-                        <p><%= matches[i].score1 %> - <%= matches[i].score2 %> ✅</p>
-                    <% } else { %>
-                        <p><%= matches[i].score1 %> - <%= matches[i].score2 %> (playing..)</p>
-                    <% }%>
+        <p>
+            <%= matches[i].score1 %> - <%= matches[i].score2 %> (playing..)
+        </p>
 
-                <% } else { %>
-                    <p>No score available</p>
-                <% } %>
+        <% }%>
 
+        <% } else { %>
+        <p>No score available</p>
+        <% } %>
 
-                <a href="/details/<%= matches[i].id %>">
-                    <button>
-                        <span>
-                            Details
-                        </span>
-                    </button>
-                </a>
-            </article>
-        </li>
+        <a href="/details/<%= matches[i].id %>">
+            <button>
+                <span> Details </span>
+            </button>
+        </a>
+    </article>
 
-        <hr class="css-disabled" />
+    <hr class="css-disabled" />
 
-	<% } %>
-</ol>
+    <% } %>
 
-<% } else{ %>
-	<p>There are no matches</p>
-<% } %>
-
+    <% } else{ %>
+        <p>There are no matches</p>
+    <% } %>
 </section>
 
 <%- include('../includes/end') %>

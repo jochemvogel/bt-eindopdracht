@@ -286,6 +286,21 @@ hr {
     display: none;
 }
 
+.skip-to-navigation {
+    background: #ccc;
+    height: 30px;
+    top: 0;
+    left: 50%;
+    padding: 0.5em;
+    position: absolute;
+    transform: translateY(-110%) translateX(-50%);
+    transition: transform 0.3s;
+}
+
+.skip-to-navigation:focus {
+    transform: translateY(0%) translateX(-50%);
+}
+
 section ol {
     list-style: none;
     padding-left: 0;
@@ -311,7 +326,8 @@ input[type="checkbox"] {
     transform: scale(3);
 }
 
-form input:not(input[type="checkbox"]):not(input[type="number"]) {
+/* For all the inputs except checkboxes, numbers and submit */
+form input:not(input[type="checkbox"]):not(input[type="number"]):not(input[type="submit"]) {
     font-size: 1em;
     margin: 0.5em 0;
     width: 100%;
@@ -351,13 +367,17 @@ textarea {
     font-weight: 700;
     text-transform: uppercase;
     padding: 0.75em 2.5em;
-    margin: 0.5em;
+    margin: 0.5em auto;
     border-radius: 0.25em;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
     align-self: center;
     width: 90%;
     max-width: 400px;
     font-family: 'Lexend', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn:active {
