@@ -66,8 +66,9 @@ A more detailed overview of all the enhancements I did not do and why can be rea
 ### Screenshot
 
 <details>
+<summary>Screenshot app (home)</summary>
+
 ![Screenshot app](https://raw.githubusercontent.com/jochemvogel/bt-eindopdracht/master/docs/screenshots/Screenshot%202021-03-28%20at%2020.01.26.png)
-<summary></summary>
 </details>
 
 ### Design
