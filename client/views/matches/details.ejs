@@ -61,12 +61,12 @@
             <input type="hidden" name="id" value="<%= match.id %>" />
         </div>
         <div>
-            <label for="team1">Name *</label>
-            <input type="text" id="team1" name="name" value="<%= match.team1 %>" maxlength="8" aria-label="Name of team 1" required />
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" maxlength="10" aria-label="Name of person that comments" required />
         </div>
         <div>
             <label for="message">Message*</label>
-            <textarea name="message" id="message" value="<%= match.team2 %>" rows="4" aria-label="Name of team 2" required></textarea>
+            <textarea name="message" id="message" rows="6" aria-label="Comment message" required></textarea>
         </div>
         <button class="btn add-btn" type="submit">Add comment</button>
     </form>
