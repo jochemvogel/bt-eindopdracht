@@ -295,10 +295,12 @@ hr {
     position: absolute;
     transform: translateY(-110%) translateX(-50%);
     transition: transform 0.3s;
+    opacity: 0;
 }
 
 .skip-to-navigation:focus {
     transform: translateY(0%) translateX(-50%);
+    opacity: 1;
 }
 
 section ol {
