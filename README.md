@@ -14,6 +14,7 @@ This README is a summary of everything I did. I often refer to the Wiki for more
 	<td align="center"><a href="#eyeglasses-overview"> 👓 Overview <a></td>
 	<td align="center"><a href="#gear-installation">⚙️ Installation<a></td>
 	<td align="center"><a href="#open_file_folder-folder-structure">🗂 Folder Structure<a></td>
+	<td align="center"><a href="#memo-sources">📝 Sources<a></td>
 </tr>
 </table>
 
@@ -158,3 +159,8 @@ Here you can find all the views of the application. It's build with EJS for dyna
 ### The rest
 
 The server side part of the application. Not applicable for this course. You need to run the server if you want to have the application locally. Wanted to separate this files in another folder, but couldn't make heroku work when I did that.
+
+
+## :memo: Sources
+
+A list with all the sources can be found in the [Wiki](https://github.com/jochemvogel/bt-eindopdracht/wiki/Sources).
